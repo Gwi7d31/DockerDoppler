@@ -1,0 +1,14 @@
+FROM postgres:17.4 AS builder
+
+# Colorized Terminal
+ENV TERM=xterm-256color
+RUN echo "PS1='\e[92m\u\e[0m@\e[94m\h\e[0m:\e[35m\w\e[0m# '" >> ~/.bashrc
+RUN echo "export TERM=xterm-256color" >> ~/.bashrc
+RUN echo alias ls="'"'ls --color=auto'"'" >> ~/.bashrc
+
+RUN mkdir -p /data
+RUN apt-get update && apt-get install -y htop netcat-openbsd cron nano vim wget postgresql-17-cron
+COPY baseSetup.sql /docker-entrypoint-initdb.d/
+COPY cronAndUserSQLSetup.sh /docker-entrypoint-initdb.d/
+RUN touch /var/log/cron.log
+WORKDIR /

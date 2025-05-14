@@ -1,0 +1,54 @@
+services:
+  radar-etl:
+    container_name: radar-etl
+    hostname: radar-etl
+    restart: always
+    build: 
+      context: ../../
+      dockerfile: docker/ci/Dockerfile.etl
+    init: true
+    env_file:
+      - ./.env
+    deploy:
+      resources:
+        limits:
+          cpus: '1.5'
+          memory: 1024M
+  pg-radar:
+    container_name: pg-radar
+    hostname: pg-radar
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile.db
+    environment:
+      POSTGRES_DB: dockerDoppler
+      POSTGRES_USER: dockerDoppler
+      POSTGRES_PASSWORD: ${DBPW} # Create DBPW in an .env file!
+    env_file:
+      - ./.env
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 256M
+  website:
+    container_name: website
+    hostname: website
+    restart: always
+    build:
+      context: ../../
+      dockerfile: docker/ci/Dockerfile.website
+    env_file:
+      - ./.env
+    deploy:
+      resources:
+        limits:
+          cpus: '4.0'
+          memory: 4096M
+    ports:
+    - 3000:3000
+    volumes:
+    - ../../website:/website
+    - /website/node_modules
+    - /website/.next
