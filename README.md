@@ -1,5 +1,5 @@
 # DockerDoppler
-An idea to create a browser version of GRLevel3 using OpenLayers and Herbie for data collection
+An idea to create a browser version of GRLevel3 using OpenLayers
 
 ## v0.0 Ideas
 
