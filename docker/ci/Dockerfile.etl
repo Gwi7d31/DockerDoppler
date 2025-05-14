@@ -14,13 +14,20 @@ ENV PYTHONPATH=/radarETL
 # Update apt
 RUN apt-get update
 # Install some fundamentals for monitoring and editing
-RUN apt install -y htop btop bmon cron nano vim wget netcat-openbsd
-
+RUN apt install -y htop btop bmon cron nano vim wget netcat-openbsd logrotate
+RUN apt install -y make cmake gcc g++ gfortran openmpi-bin openmpi-common libopenmpi-dev \
+libcairo2-dev libjpeg-dev libpng-dev libpq-dev libxml2-dev libzstd-dev \
+libhdf5-dev zlib1g-dev
+# Make a few directories
 RUN mkdir /radarETL
+RUN mkdir /dependencyBuilds
 
 # Upgrade pip to latest version before package installs
 RUN pip install --upgrade pip
 
-RUN pip install requests boto3 pylint psycopg2-binary
+RUN pip install requests boto3 pylint psycopg2-binary pytest
+RUN pip install metpy==1.6.3
+
+WORKDIR /radarETL
 
 CMD tail -f /dev/null
