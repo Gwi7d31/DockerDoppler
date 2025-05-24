@@ -1,0 +1,20 @@
+FROM node:22.16-bookworm AS builder
+
+ENV NODE_ENV=development
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV NEXT_USE_TURBOPACK=1
+ENV CHOKIDAR_USEPOLLING=true
+ENV WATCHPACK_POLLING=true
+
+# Colorized Terminal
+ENV TERM=xterm-256color
+RUN echo "PS1='\e[92m\u\e[0m@\e[94m\h\e[0m:\e[35m\w\e[0m# '" >> ~/.bashrc
+RUN echo "export TERM=xterm-256color" >> ~/.bashrc
+RUN echo alias ls="'"'ls --color=auto'"'" >> ~/.bashrc
+
+RUN apt-get update
+RUN apt install -y htop btop bmon cron nano vim wget netcat-openbsd
+
+WORKDIR /website
+
+CMD tail -f /dev/null

@@ -47,7 +47,7 @@ services:
           cpus: '4.0'
           memory: 4096M
     ports:
-    - 3000:3000
+    - 8080:3000
     volumes:
     - ../../website:/website
     - /website/node_modules

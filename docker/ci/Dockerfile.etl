@@ -13,11 +13,14 @@ ENV PYTHONPATH=/radarETL
 
 # Update apt
 RUN apt-get update
+# All these dependencies may not be needed. 
 # Install some fundamentals for monitoring and editing
 RUN apt install -y htop btop bmon cron nano vim wget netcat-openbsd logrotate
 RUN apt install -y make cmake gcc g++ gfortran openmpi-bin openmpi-common libopenmpi-dev \
 libcairo2-dev libjpeg-dev libpng-dev libpq-dev libxml2-dev libzstd-dev \
 libhdf5-dev zlib1g-dev
+# Install Other Apt Dependencies
+RUN apt-get install -y libeccodes-dev libeccodes-tools libffi-dev libgeotiff-dev libgeos-dev libheif-dev libheif-examples
 # Make a few directories
 RUN mkdir /radarETL
 RUN mkdir /dependencyBuilds
