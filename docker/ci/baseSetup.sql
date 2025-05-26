@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS radar.states (
     abbreviation VARCHAR(2) NOT NULL
 )
 
-INSERT INTO states (name, abbreviation) VALUES
+INSERT INTO radar.states (name, abbreviation) VALUES
 ('Alabama', 'AL'),
 ('Alaska', 'AK'),
 ('Arizona', 'AZ'),
