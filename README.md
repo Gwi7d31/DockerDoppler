@@ -20,6 +20,11 @@ From the `./docker/ci` directory, execute `docker compose up`
 
 The browser interface will be displayed on http://localhost:8090
 
+## Dedication
+
+I dedicate this project to my daughters Hannah and Madalynn. They have been my strength to always do the best I 
+can every single day. I am so proud to call them my daughters <3. Love ya kiddos!
+
 ## v0.0 Ideas
 
 - Go binary route with ftp://tgftp.nws.noaa.gov/SL.us008001/DF.of/DC.radar ???
