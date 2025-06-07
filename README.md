@@ -18,7 +18,7 @@ Enjoy!
 
 From the `./docker/ci` directory, execute `docker compose up`
 
-The browser interface will be displayed on http://localhost:8090
+The browser interface will be displayed on http://localhost:8080
 
 ## Dedication
 
@@ -27,7 +27,6 @@ I dedicate this project to my daughters Hannah and Madalynn. They have been my s
 ## v0.0 Ideas
 
 - Go binary route with ftp://tgftp.nws.noaa.gov/SL.us008001/DF.of/DC.radar ???
-- Use Next.JS 15 w/ Typescript for browser interface
 - Use OpenLayers as base layer
 - Settings interface for monitoring downloading, settings, & maybe some kind of performance monitoring?
 
