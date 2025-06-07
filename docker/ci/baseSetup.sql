@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS radar.states (
     id SERIAL PRIMARY KEY,
     name VARCHAR(16) NOT NULL,
     abbreviation VARCHAR(2) NOT NULL
-)
+);
 
 INSERT INTO radar.states (name, abbreviation) VALUES
 ('Alabama', 'AL'),

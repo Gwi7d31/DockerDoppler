@@ -17,7 +17,7 @@ RUN apt install -y htop btop bmon cron nano vim wget netcat-openbsd
 
 WORKDIR /website
 
-COPY package.json .
+COPY website/package.json .
 
 RUN npm install --loglevel verbose
 
