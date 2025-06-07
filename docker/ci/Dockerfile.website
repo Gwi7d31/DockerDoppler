@@ -17,4 +17,12 @@ RUN apt install -y htop btop bmon cron nano vim wget netcat-openbsd
 
 WORKDIR /website
 
-CMD tail -f /dev/null
+COPY package.json .
+
+RUN npm install --loglevel verbose
+
+#Internal port exposure
+EXPOSE 3000
+
+#CMD tail -f /dev/null
+CMD npm run dev

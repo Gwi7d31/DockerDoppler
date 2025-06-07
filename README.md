@@ -22,8 +22,7 @@ The browser interface will be displayed on http://localhost:8090
 
 ## Dedication
 
-I dedicate this project to my daughters Hannah and Madalynn. They have been my strength to always do the best I 
-can every single day. I am so proud to call them my daughters <3. Love ya kiddos!
+I dedicate this project to my daughters Hannah and Madalynn. They have been my strength to always do the best I can every single day. I am so proud to call them my daughters <3. Love ya kiddos!
 
 ## v0.0 Ideas
 
@@ -37,3 +36,12 @@ can every single day. I am so proud to call them my daughters <3. Love ya kiddos
 - Radar binary to format for OpenLayers
 - Custom colormaps
 - Smooth animating over OpenLayers map for radar.
+
+### Software
+
+- NextJS
+- Typescript
+- TailwindCSS
+- shadcn/ui
+
+`npx create-next-app@latest`
