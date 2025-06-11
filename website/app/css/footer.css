@@ -1,0 +1,16 @@
+footer {
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+}
+
+.pipeSeparatorBefore::before {
+    content: "|";
+    margin: 0 0.5rem;
+}
+
+.pipeSeparatorAfter::after {
+    content: "|";
+    margin: 0 0.5rem;
+}
