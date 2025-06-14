@@ -27,7 +27,7 @@ export default function Footer() {
 
     return (
         <footer id="footer" className="flex justify-between items-center p-1 border-t">
-            <h5 className="text-gray-300 pipeSeparatorAfter">Docker Doppler</h5>
+            <h5 className="text-gray-300 pipeSeparatorAfter">Dockppler</h5>
             <div className="text-sm pipeSeparatorBefore">
                 <span className="text-gray-300">{currentGMTTime}</span>
             </div>

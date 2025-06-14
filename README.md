@@ -1,10 +1,26 @@
-# DockerDoppler
+# Dockppler (Docker Doppler)
 
 An idea to create a browser version of GRLevel3 using OpenLayers.
 
-** Build this system when you have a few minutes to spare. Build times on modern computers will take ~215s **
+**MINIMUM SYSTEM REQUIREMENTS (Excluding Broswer Load)**
 
-** After building image, running image in container will only take a few seconds **
+**Production**
+
+CPU: 3.5 threads
+RAM: ~1.5GB
+
+**Continuous Integration (CI)**
+
+CPU: 6.5 threads
+RAM: 5.25GB
+
+## General Notes
+
+- CI needs much more resources because of Next.JS development
+
+- Build this system when you have a few minutes to spare. Build times on modern computers will take ~215s
+
+- After building image, running image in container will only take a few seconds
 
 ## Prod Running Instructions
 
@@ -18,7 +34,7 @@ Enjoy!
 
 From the `./docker/ci` directory, execute `docker compose up`
 
-The browser interface will be displayed on http://localhost:8090
+The browser interface will be displayed on http://localhost:8080
 
 ## Dedication
 
