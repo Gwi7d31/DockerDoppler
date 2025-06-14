@@ -62,5 +62,5 @@ I dedicate this project to my daughters Hannah and Madalynn. They have been my s
 ### Back End
 
 - Postgres 17
-- Python
+- Python 3.13+
 
