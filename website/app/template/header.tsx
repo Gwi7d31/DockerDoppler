@@ -4,10 +4,12 @@ import React, { useState, useEffect } from 'react'
 
 import Link from "next/link"
 
-import { CircleCheckIcon, CircleHelpIcon, CircleIcon, Cog, Moon, Sun } from "lucide-react"
+import { Cog, Moon, Sun, Radar, TriangleAlert, CloudLightning, CloudHail, Wind, Tornado, 
+    MessageSquareWarning, Car, CloudRainWind, LandPlot, CirclePlus, Save } from "lucide-react"
 
 import { useTheme } from "next-themes"
 
+import { Switch } from "@/components/ui/switch"
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList,
   NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
 import { Button } from '@/components/ui/button'
@@ -16,6 +18,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Alert Dialog",
+    icon: <Car />,
     href: "/docs/primitives/alert-dialog",
     description:
       "A modal dialog that interrupts the user with important content and expects a response.",
@@ -184,26 +187,107 @@ export default function Header() {
                         </NavigationMenuContent>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <NavigationMenuTrigger>With Icon</NavigationMenuTrigger>
+                        <NavigationMenuTrigger>Map Layers</NavigationMenuTrigger>
                         <NavigationMenuContent>
-                            <ul className="grid w-[200px] gap-4">
+                            <ul className="grid w-[300px] gap-4">
                                 <li>
                                     <NavigationMenuLink asChild>
-                                    <Link href="#" className="flex-row items-center gap-2">
-                                        <CircleHelpIcon />
-                                        Backlog
+                                    <Link href="#" className="flex-row justify-between">
+                                        <div className="flex items-center gap-2">
+                                            <Radar />
+                                            Radar
+                                        </div>
+                                        <Switch />
                                     </Link>
                                     </NavigationMenuLink>
                                     <NavigationMenuLink asChild>
-                                    <Link href="#" className="flex-row items-center gap-2">
-                                        <CircleIcon />
-                                        To Do
+                                    <Link href="#" className="flex-row justify-between">
+                                        <div className="flex items-center gap-2">
+                                            <TriangleAlert />
+                                            Warnings
+                                        </div>
+                                        <Switch />
                                     </Link>
                                     </NavigationMenuLink>
                                     <NavigationMenuLink asChild>
-                                    <Link href="#" className="flex-row items-center gap-2">
-                                        <CircleCheckIcon />
-                                        Done
+                                    <Link href="#" className="flex-row justify-between">
+                                        <div className="flex items-center gap-2">
+                                            <CloudLightning />
+                                            SPC Convective Outlook - Day 1
+                                        </div>
+                                        <Switch />
+                                    </Link>
+                                    </NavigationMenuLink>
+                                    <NavigationMenuLink asChild>
+                                    <Link href="#" className="flex-row justify-between">
+                                        <div className="flex items-center gap-2">
+                                            <Tornado />
+                                            SPC Tornado Outlook - Day 1
+                                        </div>
+                                        <Switch />
+                                    </Link>
+                                    </NavigationMenuLink>
+                                    <NavigationMenuLink asChild>
+                                    <Link href="#" className="flex-row justify-between">
+                                        <div className="flex items-center gap-2">
+                                            <Wind />
+                                            SPC Wind Outlook - Day 1
+                                        </div>
+                                        <Switch />
+                                    </Link>
+                                    </NavigationMenuLink>
+                                    <NavigationMenuLink asChild>
+                                    <Link href="#" className="flex-row justify-between">
+                                        <div className="flex items-center gap-2">
+                                            <CloudHail />
+                                            SPC HailOutlook - Day 1
+                                        </div>
+                                        <Switch />
+                                    </Link>
+                                    </NavigationMenuLink>
+                                    <NavigationMenuLink asChild>
+                                    <Link href="#" className="flex-row justify-between">
+                                        <div className="flex items-center gap-2">
+                                            <MessageSquareWarning />
+                                            SPC Storm Reports (Expirimental)
+                                        </div>
+                                        <Switch />
+                                    </Link>
+                                    </NavigationMenuLink>
+                                    <NavigationMenuLink asChild>
+                                    <Link href="#" className="flex-row justify-between">
+                                        <div className="flex items-center gap-2">
+                                            <MessageSquareWarning />
+                                            SPC Meso Discussions
+                                        </div>
+                                        <Switch />
+                                    </Link>
+                                    </NavigationMenuLink>
+                                    <NavigationMenuLink asChild>
+                                    <Link href="#" className="flex-row justify-between">
+                                        <div className="flex items-center gap-2">
+                                            <Car />
+                                            Spotter Network Locations
+                                        </div>
+                                        <Switch />
+                                    </Link>
+                                    </NavigationMenuLink>
+                                    <NavigationMenuLink asChild>
+                                    <Link href="#" className="flex-row justify-between">
+                                        <div className="flex items-center gap-2">
+                                            <CloudRainWind />
+                                            NHC Tracks
+                                        </div>
+                                        <Switch />
+                                    </Link>
+                                    </NavigationMenuLink>
+                                    <NavigationMenuLink asChild>
+                                    <Link href="#" className="flex-row justify-between">
+                                        <div className="flex items-center gap-2">
+                                            <LandPlot />
+                                            Station Plots
+                                        </div>
+                                        <Switch />
                                     </Link>
                                     </NavigationMenuLink>
                                 </li>
@@ -223,6 +307,19 @@ export default function Header() {
                 </NavigationMenuList>
             </NavigationMenu>
             <div className="flex gap-2">
+            {/* Save Configuration */}
+            <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                    <Button variant="outline" size="icon">
+                        <Save className="h-[1.2rem] w-[1.2rem]" />
+                        <span className="sr-only">Save Configuration</span>
+                    </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                    <DropdownMenuItem>Save Current Layout</DropdownMenuItem>
+                    <DropdownMenuItem>Load Saved Layout</DropdownMenuItem>
+                </DropdownMenuContent>
+            </DropdownMenu>
             {/* Settings */}
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>

@@ -18,7 +18,7 @@ Enjoy!
 
 From the `./docker/ci` directory, execute `docker compose up`
 
-The browser interface will be displayed on http://localhost:8080
+The browser interface will be displayed on http://localhost:8090
 
 ## Dedication
 

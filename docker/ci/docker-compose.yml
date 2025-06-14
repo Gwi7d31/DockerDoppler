@@ -13,7 +13,7 @@ services:
       resources:
         limits:
           cpus: '1.5'
-          memory: 1024M
+          memory: 768M
   pg-radar:
     container_name: pg-radar
     hostname: pg-radar
